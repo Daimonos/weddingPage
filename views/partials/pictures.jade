@@ -1,0 +1,17 @@
+.row
+	.col-md-12(ng-show="installed")
+		div(flow-init)
+			input(type='file' flow-btn flow-directory)
+			.alert(flow-drop)
+				p Drag & Drop files here
+			ul.list-inline
+				.row
+					li.col-md-3.col-sm-4.text-center(ng-repeat="file in $flow.files")
+						div(style="height:400px;background-color:black;margin-bottom:10px")
+							img(flow-img ="file" style="max-width:100%;max-height:300px;")
+
+	.col-md-12(ng-show="!installed")
+		h2 Pictures
+		p We're going to have some fun with this!
+		p We are going to have a gallery of pictures and also give you all a chance to upload your fun snapshots! 
+		p I'm currently building the application and it'll be ready to go for the wedding!

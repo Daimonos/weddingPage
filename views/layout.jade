@@ -1,0 +1,36 @@
+doctype html
+html
+	head
+		title= title
+		meta(name="viewport" content="width=device-width,initial-scale=1")
+		link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.css')
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body(ng-app='app')
+		nav.navbar.navbar-default.navbar-fixed-top
+			.container-fluid
+				.navbar-header
+					button.navbar-toggle(type='button', ng-init='navCollapsed=true' ng-click='navCollapsed=!navCollapsed')
+						i.fa.fa-bars
+					a.navbar-brand(href='/#/') J&A
+				.collapse.navbar-collapse(ng-class="{'in':!navCollapsed}" ng-click="navCollapsed=!navCollapsed")
+					ul.nav.navbar-nav
+						li
+							a(href='/#/date') The Date
+						li
+							a(href='/#/venue') The Venue
+						li
+							a(href='/#/pictures') Pictures
+						li
+							a(href='/#/vendors') Vendors
+						li
+							a(href='/#/contact') Contact
+		block content
+
+	script(src='/bootstrap/dist/js/bootstrap.js')
+	script(src='/angular/angular.js')
+	script(src='/angular-route/angular-route.js')
+	script(src='/angular-animate/angular-animate.js')
+	script(src-'/angular-bootstrap/ui-bootstrap.js')
+	script(src='/ng-flow/dist/ng-flow-standalone.js')
+	script(src='/javascripts/app.js')
